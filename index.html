@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To_Do list</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+      } 
+      body {
+        background:linear-gradient(135deg,#034e11,#4e085f);
+      }
+       .container {
+        width: 100%;
+        min-height: 100vh; 
+        background:linear-gradient(135deg,#034e11,#4e085f);
+      } 
+      .todo-app {
+        width: 100%;
+        max-width: 540px;
+        background: white;
+        margin: 100px auto 20px;
+        padding: 40px 30px 70px;
+        border-radius: 30px;
+      }
+      .todo-app h2 {
+        color: #002765;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #edeef0;
+        border-radius: 30px;
+        padding-left: 20px;
+        margin-bottom: 25px;
+        background: #edfe11;
+      }
+      input {
+        flex: 1;
+        outline: none;
+        background:transparent;
+        border: none; 
+        padding: 10px;
+        border-top: none;
+        /* border-width: 30px; */
+        width: 100px;
+        font-weight: 14px;
+
+      }
+      button {
+         border: none;
+         outline: none;
+         padding: 16px 50px;
+         background: #ff5945;
+         color: #fff;
+         font-size: 16px;
+         cursor: pointer;
+         border-radius: 40px;
+         /*    */
+         /* margin-bottom: 40px; */
+      }
+      ul li {
+        list-style: none;
+        font-size: 17px;
+        padding: 12px 80px 12px 50px;
+        user-select: none;
+        cursor: pointer;
+        position: relative ;
+        
+
+      }
+      ul li::before {
+        content: '';
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-image:url(./icons8-unchecked-radio-button-48.png) ;
+        background-size: cover;
+        background-position: center;
+        top: 14px;
+        left: 10px;
+        /* right: 30px; */
+      }
+      ul li.checked {
+        color: #555;
+        text-decoration: line-through;
+      }  
+      ul li.checked::before {
+           background-image:url(./icons8-checked-48.png) ;
+      }
+      ul li span {
+        position: absolute;
+        right: 0;
+        top: -5px;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+        text-align: left;
+        color: #555;
+        line-height: 50px;
+        border: 20px;
+        border-radius: 50%;
+      }
+      ul li span:hover {
+        color: #edfe11;
+       /* background-color: #34fde3; */
+      }
+    </style>
+</head>
+<body>
+     <div class="container">
+     <div class="todo-app">
+        <h2>To-Do List <img src="./icons8-notes-48.png" alt=""></h2>
+        <div class="row">
+            <input type="text" id="input_Box" placeholder="Add your Task">
+            <button onclick="AddContent()">Add</button>
+        </div>
+        <ul id="list-content">
+            <!-- <li class="checked" id="marked">Task 1</li>
+            <li>Task 2</li>
+            <li>Task 3</li>
+            <li>Task 4</li>
+            <li>Task 5</li>
+            <li>Task 6</li> -->
+        </ul>
+     </div>
+     </div>
+    <script src="script.js">
+    </script>
+</body>
+</html>
